@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veranum SpA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Trivago">
+        </div>
+        <h1>¡Se parte de los mejores hoteles del PAIS!</h1>
+        <p>Nosotros hacemos la búsqueda. Tú ahorras.</p>
+    </header>
+
+    <section class="search-section">
+        <form>
+            <input type="text" placeholder="¿Dónde quieres ir?" required>
+            <input type="date" placeholder="Llegada" required>
+            <input type="date" placeholder="Salida" required>
+            <div class="dropdown">
+                <button type="button" id="guestButton">2 huéspedes, 1 habitación</button>
+                <div class="dropdown-content">
+                    <div class="guest-option">
+                        <label>Adultos (18+)</label>
+                        <button type="button" onclick="updateGuestCount('adults', -1)">-</button>
+                        <span id="adults-count">2</span>
+                        <button type="button" onclick="updateGuestCount('adults', 1)">+</button>
+                    </div>
+                    <div class="guest-option">
+                        <label>Niños (0-17)</label>
+                        <button type="button" onclick="updateGuestCount('children', -1)">-</button>
+                        <span id="children-count">0</span>
+                        <button type="button" onclick="updateGuestCount('children', 1)">+</button>
+                    </div>
+                    <div class="guest-option">
+                        <label>Habitaciones</label>
+                        <button type="button" onclick="updateGuestCount('rooms', -1)">-</button>
+                        <span id="rooms-count">1</span>
+                        <button type="button" onclick="updateGuestCount('rooms', 1)">+</button>
+                    </div>
+                    <div class="guest-option">
+                        <label>
+                            <input type="checkbox" id="pets-allowed"> Mascotas permitidas
+                        </label>
+                    </div>
+                    <div class="guest-option">
+                        <label>
+                            <input type="checkbox" id="extra-service1"> Servicio extra 1
+                        </label>
+                    </div>
+                    <div class="guest-option">
+                        <label>
+                            <input type="checkbox" id="extra-service2"> Servicio extra 2
+                        </label>
+                    </div>
+                    <button type="button" onclick="closeDropdown()">Aceptar</button>
+                </div>
+            </div>
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+
+    <section class="partners">
+        <img src="booking.png" alt="Booking.com">
+        <img src="hoteles.png" alt="Hoteles.com">
+        <img src="expedia.png" alt="Expedia">
+        <img src="vrbo.png" alt="Vrbo">
+        <img src="all.png" alt="All">
+        <img src="trip.png" alt="Trip.com">
+        <img src="despegar.png" alt="Despegar">
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <img src="busca-rapido.png" alt="Busca rápido">
+            <h2>Busca rápido</h2>
+            <p>Busca entre 5 millones de hoteles en segundos.</p>
+        </div>
+        <div class="feature">
+            <img src="compara-con-confianza.png" alt="Compara con confianza">
+            <h2>Compara con confianza</h2>
+            <p>Compara precios de hoteles de cientos de páginas al mismo tiempo.</p>
+        </div>
+        <div class="feature">
+            <img src="ahorra-a-lo-grande.png" alt="Ahorra a lo grande">
+            <h2>Ahorra a lo grande</h2>
+            <p>Descubre increíbles ofertas en nuestras páginas asociadas.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Descubre el mejor momento para reservar</p>
+        <img src="banner.jpg" alt="Banner">
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
