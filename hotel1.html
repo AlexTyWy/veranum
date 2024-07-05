@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="info-container">
+    <div class="hotel-info-left">
+        <img src="fotos/hotel1.jpg" alt="Hotel 1" class="hotel-image">
+        <h1>Hotel 1</h1>
+        <ul class="amenities-list">
+            <li>Cama VIP</li>
+            <li>Televisión</li>
+            <li>Wi-Fi Gratis</li>
+            <li>Desayuno Incluido</li>
+        </ul>
+    </div>
+    <div class="hotel-reserve-right">
+        <h2>Reserva tu Habitación</h2>
+        <form class="reserve-form" onsubmit="openRegisterModal(event)">
+            <label for="roomType">Tipo de Habitación:</label>
+            <select id="roomType" name="roomType" onchange="updatePrice()">
+                <option value="single" data-price="100">Individual - $100/noche</option>
+                <option value="double" data-price="150">Doble - $150/noche</option>
+                <option value="suite" data-price="250">Suite - $250/noche</option>
+            </select>
+            <p id="roomPrice">Precio por noche: $100</p>
+            
+            <!-- Nuevo campo para seleccionar habitación -->
+            <label for="roomNumber">Seleccione su habitación:</label>
+            <select id="roomNumber" name="roomNumber">
+                <option value="101">Habitación 101</option>
+                <option value="102">Habitación 102</option>
+                <option value="103">Habitación 103</option>
+                <!-- Agrega más opciones según las habitaciones disponibles -->
+            </select>
+
+            <label for="checkIn">Fecha de Entrada:</label>
+            <input type="date" id="checkIn" name="checkIn" required>
+            <label for="checkOut">Fecha de Salida:</label>
+            <input type="date" id="checkOut" name="checkOut" required>
+            <button type="submit" class="btn-reserve">Reservar Ahora</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal de Registro -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h1>Reserva de Habitación</h1>
+        <p>¿Cómo desea proceder?</p>
+        <button class="btn-register" onclick="continueAsGuest()">Continuar como Invitado</button>
+        <button class="btn-register" onclick="openRegisterForm()">Registrarse</button>
+    </div>
+</div>
+
+<script>
+    function updatePrice() {
+        var roomType = document.getElementById('roomType');
+        var selectedOption = roomType.options[roomType.selectedIndex];
+        var price = selectedOption.getAttribute('data-price');
+        document.getElementById('roomPrice').textContent = 'Precio por noche: $' + price;
+    }
+
+    function openRegisterModal(event) {
+        event.preventDefault();
+        document.getElementById('registerModal').style.display = 'block';
+    }
+
+    function closeRegisterModal() {
+        document.getElementById('registerModal').style.display = 'none';
+    }
+
+    function continueAsGuest() {
+        var reservation = {
+            hotel: 'Hotel 1',
+            roomType: document.getElementById('roomType').value,
+            roomNumber: document.getElementById('roomNumber').value,
+            price: document.querySelector('#roomType option:checked').getAttribute('data-price'),
+            checkIn: document.getElementById('checkIn').value,
+            checkOut: document.getElementById('checkOut').value
+        };
+
+        localStorage.setItem('reservation', JSON.stringify(reservation));
+        window.location.href = 'confirm.html';
+    }
+
+    function openRegisterForm() {
+        // Redirigir al formulario de registro
+        window.location.href = 'register.html';
+    }
+</script>
+</body>
+</html>

@@ -1,170 +1,129 @@
-body {
-    font-family: Arial, sans-serif;
+/* styles.css */
+body, html {
     margin: 0;
     padding: 0;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-header {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff url('loader.gif') no-repeat center center;
+    z-index: 1000;
 }
 
-header .logo img {
-    height: 50px;
+#content {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
 }
 
-header h1 {
-    font-size: 24px;
-    margin: 10px 0;
+.hidden {
+    display: none;
 }
 
-header p {
-    color: #777;
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
-.search-section {
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.search-section form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.search-section input, .search-section button {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.search-section button {
-    background-color: #007bff;
+.btn-nav {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background: #ff7f50;
     color: #fff;
     border: none;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown button {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
     cursor: pointer;
 }
 
-.dropdown-content {
-    display: none;
+.overlay {
     position: absolute;
-    background-color: #fff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 20px;
-    z-index: 1;
-    width: 300px;
-}
-
-.guest-option {
-    margin-bottom: 10px;
-}
-
-.guest-option label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.guest-option button {
-    margin: 0 5px;
-}
-
-#guestButton:focus + .dropdown-content, .dropdown-content:hover {
-    display: block;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    text-align: center;
 }
 
+.headline {
+    font-size: 48px;
+    color: #fff;
+}
+
+.btn-reserve {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #ff7f50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para register.html */
 .container {
     display: flex;
-    background-color: #fff;
+    justify-content: center;
+    align-items: flex-start;
     padding: 20px;
+    background: #f4f4f4;
+}
+
+.login-panel, .registration-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    max-width: 900px;
-    width: 100%;
+    margin: 10px;
+    flex: 1;
+    max-width: 600px;
 }
 
 .login-panel {
-    width: 30%;
-    padding-right: 20px;
-    border-right: 1px solid #ddd;
+    text-align: center;
 }
 
 .login-panel h2 {
-    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .login-panel p {
-    font-size: 14px;
-    color: #555;
+    margin-bottom: 20px;
 }
 
-.login-button, .password-reset-button {
+.login-panel button {
     display: block;
     width: 100%;
+    margin: 5px 0;
     padding: 10px;
-    margin-top: 10px;
-    background-color: #007bff;
+    background: #ff7f50;
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-}
-
-.password-reset-button {
-    background-color: #6c757d;
-}
-
-.registration-form {
-    width: 70%;
-    padding-left: 20px;
 }
 
 .registration-form h2 {
-    margin-top: 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-.form-group input, .form-group select, .phone-group input, .phone-group select {
-    width: calc(100% - 10px);
+.form-group input, .form-group select {
+    width: 100%;
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .phone-group {
@@ -176,22 +135,27 @@ body {
     margin-right: 5px;
 }
 
-.generate-password-button, .register-button {
-    background-color: #007bff;
+.phone-group input {
+    flex: 1;
+}
+
+.registration-form .register-button, .registration-form .generate-password-button {
+    background: #ff7f50;
     color: #fff;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
-    font-size: 14px;
+}
+
+.registration-form .register-button {
     width: 100%;
 }
 
-.generate-password-button {
+.registration-form .generate-password-button {
     margin-top: 10px;
 }
 
-.register-button {
-    margin-top: 20px;
+.registration-form label {
+    display: flex;
+    align-items: center;
 }
-

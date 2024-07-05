@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="reservation-container">
+    <h1>Reserva tu viaje</h1>
+    <div class="hotel-options">
+        <div class="hotel-card">
+            <img src="fotos/hotel1.jpg" alt="Hotel 1">
+            <div class="hotel-info">
+                <h2>Veranum Santiago</h2>
+                <p>Disfruta de una experiencia única en Santiago, con las mejores comodidades y servicios.</p>
+                <ul>
+                    <li>Cama VIP</li>
+                    <li>Televisión</li>
+                    <li>WiFi gratis</li>
+                    <li>Piscina</li>
+                </ul>
+                <button onclick="window.location.href='hotel1.html'" class="btn-more-info">Saber más del Hotel</button>
+            </div>
+        </div>
+        <div class="hotel-card">
+            <img src="fotos/hotel2.jpg" alt="Hotel 2">
+            <div class="hotel-info">
+                <h2>Veranum Viña del Mar</h2>
+                <p>Relájate en Viña del mar, donde el confort y la elegancia se unen para ofrecerte una estancia inolvidable.</p>
+                <ul>
+                    <li>Cama VIP</li>
+                    <li>Televisión</li>
+                    <li>WiFi gratis</li>
+                    <li>Desayuno incluido</li>
+                </ul>
+                <button onclick="window.location.href='hotel2.html'" class="btn-more-info">Saber más del Hotel</button>
+            </div>
+        </div>
+    </div>
+    <button onclick="redirectReservation()" class="btn-reserve">Reservar ahora</button>
+</div>
+
+<script>
+    function redirectReservation() {
+        // Aquí puedes agregar la lógica para redirigir o realizar acciones adicionales al hacer clic en "Reservar ahora"
+        alert("¡Reserva realizada con éxito!");
+        // Ejemplo de redirección a una página de confirmación
+        window.location.href = "confirmacion.html";
+    }
+</script>
+
+</body>
+</html>
